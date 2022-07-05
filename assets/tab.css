@@ -1,0 +1,204 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.tabs {
+  /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    height: 250px; */
+  font-family: 'Noto Sans', sans-serif;
+  font-style: normal;
+  background: #FFFFFF;
+  /* overflow: hidden; */
+  /* border-radius: 50px; */
+}
+
+.tabs .tab-header {
+  /* height: 60px; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 48px;
+}
+
+.tabs .tab-header > li {
+  /* width: calc(100% / 4); */
+  margin-right: 1rem;
+  text-align: center;
+  color: #2c6ef2;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  text-transform: capitalize;
+  outline: none;
+  float: left;
+}
+
+.tabs .tab-header > li.active {
+  /* color: #00acee; */
+  border-bottom: 4px solid;
+}
+
+.tabs .all-dropdown {
+  padding: 24px 48px;
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #002C77;
+  background-color: #F8FAFC;
+  display: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.tabs .all-dropdown::after {
+  content: ">";
+  color: #002C77;
+  font-weight: normal;
+  outline: 1px solid #002C77;
+  outline-offset: 1px;
+  border-radius: 50%;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  width: 15px;
+  height: 15px;
+  padding-left: 7px;
+  padding-bottom: 7px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.tabs .tab-body {
+  position: relative;
+  background: #F8FAFC;
+  /* padding: 10px 5px; */
+  padding-bottom: 1px;
+}
+
+.tabs .tab-body > .tab-body-item {
+  /* position: absolute; 
+            top: -200%;
+            opacity: 0; */
+  display: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-top: 5px;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  /* transition: opacity 500ms ease-in-out 0ms, transform 500ms ease-in-out 0ms; */
+}
+
+.tabs .tab-body > .tab-body-item.active {
+  top: 0;
+  /* opacity: 1; */
+  display: block;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  margin-top: 0;
+}
+
+.tabs .tab-body > .tab-body-item.active.all {
+  display: block;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.tabs .tab-body > .tab-body-item .tab-body-header {
+  background: #FFFFFF;
+  padding: 16px 48px;
+  margin: 0;
+  color: #002C77;
+  line-height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tabs .tab-body > .tab-body-item .tab-body-header .view-all {
+  font-size: 16px;
+  color: #2c6ef2;
+  margin-left: 24px;
+  font-weight: 400;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  position: relative;
+  top: 3px;
+  cursor: pointer;
+}
+
+.tabs .tab-body > .tab-body-item .tab-body-header .view-all .view-all-text {
+  font-size: 16px;
+}
+
+.tabs .tab-body > .tab-body-item .tab-body-header .view-all i {
+  font-size: 14px;
+}
+
+.tabs .tab-body > .tab-body-item .tab-body-section {
+  background: #FFFFFF;
+  margin: 48px;
+}
+
+.tabs .tab-body > .tab-body-item .tab-body-section.collapsed {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .tabs .tab-header {
+    display: none !important;
+  }
+  .tabs .all-dropdown {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    cursor: pointer;
+  }
+  .tabs .all-dropdown.arrow-up::after {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+  .tabs .tab-body {
+    background-color: #FFFFFF;
+  }
+  .tabs .tab-body > .tab-body-item {
+    display: block;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    border-bottom: 2px solid #009DE0;
+  }
+  .tabs .tab-body > .tab-body-item .tab-body-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-bottom: 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .tabs .tab-body > .tab-body-item .tab-body-header .view-all-text {
+    display: none;
+  }
+  .tabs .tab-body > .tab-body-item .tab-body-header.collapsed::after {
+    content: "-";
+  }
+  .tabs .tab-body > .tab-body-item .tab-body-section {
+    display: block;
+    margin: 0 48px;
+  }
+  .tabs .tab-body.body-collapsed {
+    -webkit-transition: ease-in-out 0.5s;
+    transition: ease-in-out 0.5s;
+    display: none;
+  }
+}
+/*# sourceMappingURL=tab.css.map */
